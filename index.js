@@ -15,7 +15,17 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: process.env.NETLIFY_URL || "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (
+        !origin ||
+        origin.endsWith(".netlify.app") ||
+        origin === "http://localhost:5173"
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 
