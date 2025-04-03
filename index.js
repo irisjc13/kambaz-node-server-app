@@ -36,11 +36,12 @@ const sessionOptions = {
 };
 
 if (process.env.NODE_ENV !== "development") {
+  app.set("trust proxy", 1); // Needed for secure cookies on proxies like Render
   sessionOptions.proxy = true;
   sessionOptions.cookie = {
     sameSite: "none",
     secure: true,
-    domain: process.env.NODE_SERVER_DOMAIN,
+    // domain: process.env.NODE_SERVER_DOMAIN,
   };
 }
 
