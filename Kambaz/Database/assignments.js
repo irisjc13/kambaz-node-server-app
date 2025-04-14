@@ -1,29 +1,110 @@
-export default [
-    { "_id": "A-CS1234-1", "title": "React Component Assignment", "course": "CS1234" },
-    { "_id": "A-CS1234-2", "title": "State Management Task", "course": "CS1234" },
-    { "_id": "A-CS1234-3", "title": "React Router Project", "course": "CS1234" },
-  
-    { "_id": "A-ENGL1111-1", "title": "Essay Analysis", "course": "ENGL1111" },
-    { "_id": "A-ENGL1111-2", "title": "Literature Review", "course": "ENGL1111" },
-    { "_id": "A-ENGL1111-3", "title": "Creative Writing Assignment", "course": "ENGL1111" },
-  
-    { "_id": "A-DS2121-1", "title": "Data Cleaning Exercise", "course": "DS2121" },
-    { "_id": "A-DS2121-2", "title": "Data Visualization Project", "course": "DS2121" },
-    { "_id": "A-DS2121-3", "title": "Predictive Modeling Task", "course": "DS2121" },
-  
-    { "_id": "A-COMM1234-1", "title": "Narrative Analysis", "course": "COMM1234" },
-    { "_id": "A-COMM1234-2", "title": "Script Writing Assignment", "course": "COMM1234" },
-    { "_id": "A-COMM1234-3", "title": "Storytelling Presentation", "course": "COMM1234" },
-  
-    { "_id": "A-CS4550-1", "title": "Responsive Design Project", "course": "CS4550" },
-    { "_id": "A-CS4550-2", "title": "JavaScript DOM Manipulation", "course": "CS4550" },
-    { "_id": "A-CS4550cd-3", "title": "Full-Stack App Assignment", "course": "CS4550" },
-  
-    { "_id": "A-Math1234-1", "title": "Limits and Continuity Homework", "course": "Math1234" },
-    { "_id": "A-Math1234-2", "title": "Differentiation Problem Set", "course": "Math1234" },
-    { "_id": "A-Math1234-3", "title": "Optimization Task", "course": "Math1234" },
-  
-    { "_id": "A-CHEM1111-1", "title": "Chemical Bonding Quiz", "course": "CHEM1111" },
-    { "_id": "A-CHEM1111-2", "title": "Lab Report Assignment", "course": "CHEM1111" },
-    { "_id": "A-CHEM1111-3", "title": "Periodic Trends Analysis", "course": "CHEM1111" }
-  ]
+export default   [
+  {
+    "_id": "A101",
+    "title": "Propulsion Assignment",
+    "course": "RS101",
+    "description": "Analyze the propulsion system of a rocket.",
+    "points": 100,
+    "dueDate": "2023-12-01",
+    "availableDate": "2023-11-01",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A102",
+    "title": "Combustion Analysis",
+    "course": "RS101",
+    "description": "Perform a detailed combustion analysis.",
+    "points": 100,
+    "dueDate": "2023-12-15",
+    "availableDate": "2023-11-15",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A103",
+    "title": "Nozzle Design Project",
+    "course": "RS101",
+    "description": "Design a nozzle for a rocket engine.",
+    "points": 100,
+    "dueDate": "2023-12-30",
+    "availableDate": "2023-12-01",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A201",
+    "title": "Aerodynamics Quiz",
+    "course": "RS102",
+    "description": "Quiz on basic aerodynamics principles.",
+    "points": 50,
+    "dueDate": "2023-11-10",
+    "availableDate": "2023-11-01",
+    "group": "Quizzes",
+    "displayGrade": "percentage",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A202",
+    "title": "Flow Analysis",
+    "course": "RS102",
+    "description": "Analyze the flow over an airfoil.",
+    "points": 100,
+    "dueDate": "2023-11-20",
+    "availableDate": "2023-11-10",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A203",
+    "title": "Heating Analysis",
+    "course": "RS102",
+    "description": "Analyze the heating effects on a spacecraft.",
+    "points": 100,
+    "dueDate": "2023-12-05",
+    "availableDate": "2023-11-25",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A301",
+    "title": "Structural Design Task",
+    "course": "RS103",
+    "description": "Design the structure of a satellite.",
+    "points": 100,
+    "dueDate": "2023-12-10",
+    "availableDate": "2023-11-20",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A302",
+    "title": "Orbital Calculations",
+    "course": "RS103",
+    "description": "Calculate the orbit of a satellite.",
+    "points": 100,
+    "dueDate": "2023-12-20",
+    "availableDate": "2023-12-01",
+    "group": "Assignments",
+    "displayGrade": "points",
+    "submissionType": "online"
+  },
+  {
+    "_id": "A303",
+    "title": "Systems Engineering Exam",
+    "course": "RS103",
+    "description": "Exam on systems engineering principles.",
+    "points": 100,
+    "dueDate": "2023-12-30",
+    "availableDate": "2023-12-15",
+    "group": "Exams",
+    "displayGrade": "points",
+    "submissionType": "online"
+  }
+]
