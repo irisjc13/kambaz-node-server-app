@@ -21,7 +21,8 @@ app.use(
       if (
         !origin ||
         origin.endsWith(".netlify.app") ||
-        origin === "http://localhost:5173"
+        origin === "http://localhost:5173" ||
+        origin === "http://localhost:5174"
       ) {
         callback(null, true);
       } else {
