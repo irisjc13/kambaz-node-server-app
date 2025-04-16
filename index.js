@@ -22,17 +22,16 @@ app.use(
         "http://localhost:5173",
         "http://localhost:5174",
         "http://localhost:5175",
-        "https://storied-crepe-86eb9f.netlify.app",
+        "https://a6--kambaz-react-web-app-sp25.netlify.app",
       ];
 
-      // Allow .netlify.app wildcard domains
       const isNetlify = origin?.endsWith(".netlify.app");
       const isLocalhost = allowedOrigins.includes(origin);
 
-      if (!origin || isLocalhost || isNetlify) {
+      if (!origin || isNetlify || isLocalhost) {
         callback(null, true);
       } else {
-        console.log("Blocked CORS origin:", origin);
+        console.log("Blocked origin:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
