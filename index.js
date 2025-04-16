@@ -8,19 +8,26 @@ import "dotenv/config";
 import session from "express-session";
 import ModuleRoutes from "./Kambaz/Modules/routes.js";
 import AssignmentRoutes from "./Kambaz/Assignments/routes.js";
+import mongoose from "mongoose";
 
-
+const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kambaz"
+mongoose.connect(CONNECTION_STRING);
 const app = express();
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "http://localhost:5175",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:5174",
+  "http://127.0.0.1:5175",
+];
 
 app.use(
   cors({
     credentials: true,
     origin: function (origin, callback) {
-      if (
-        !origin ||
-        origin.endsWith(".netlify.app") ||
-        origin === "http://localhost:5173"
-      ) {
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".netlify.app")) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
@@ -53,4 +60,5 @@ Lab5(app);
 Hello(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
-app.listen(process.env.PORT || 4000);
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
