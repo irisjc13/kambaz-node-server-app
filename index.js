@@ -17,15 +17,22 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: function (origin, callback) {
-      if (
-        !origin ||
-        origin.endsWith(".netlify.app") ||
-        origin === "http://localhost:5173" ||
-        origin === "http://localhost:5174"
-      ) {
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:5175",
+        "https://storied-crepe-86eb9f.netlify.app",
+      ];
+
+      // Allow .netlify.app wildcard domains
+      const isNetlify = origin?.endsWith(".netlify.app");
+      const isLocalhost = allowedOrigins.includes(origin);
+
+      if (!origin || isLocalhost || isNetlify) {
         callback(null, true);
       } else {
+        console.log("Blocked CORS origin:", origin);
         callback(new Error("Not allowed by CORS"));
       }
     },
