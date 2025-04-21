@@ -66,6 +66,9 @@ Hello(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
 
+MCQRoutes(app);
+FillInRoutes(app); 
+TFRoutes(app); 
 // mount all quiz endpoints (including /attempt and /attempts)
 QuizRoutes(app);
 const PORT = process.env.PORT || 4000;
