@@ -8,7 +8,12 @@ import "dotenv/config";
 import session from "express-session";
 import ModuleRoutes from "./Kambaz/Modules/routes.js";
 import AssignmentRoutes from "./Kambaz/Assignments/routes.js";
+import QuizRoutes       from "./Kambaz/Quizzes/routes.js";
 import mongoose from "mongoose";
+import MCQRoutes from "./Kambaz/MCQ/routes.js";
+import FillInRoutes from "./Kambaz/FillInQuestion/routes.js";
+import TFRoutes from "./Kambaz/TFQuestion/routes.js";
+
 
 const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kambaz"
 mongoose.connect(CONNECTION_STRING);
@@ -60,5 +65,8 @@ Lab5(app);
 Hello(app);
 ModuleRoutes(app);
 AssignmentRoutes(app);
+
+// mount all quiz endpoints (including /attempt and /attempts)
+QuizRoutes(app);
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
